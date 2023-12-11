@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="displayData"></div>
+  <script>
+    const storedData = sessionStorage.getItem('formData');
+
+    if (storedData) {
+      const formData = JSON.parse(storedData);
+
+      const displayDiv = document.getElementById('displayData');
+      displayDiv.innerHTML = `
+        <p>${formData.terms}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Summary</title>
+  <link href="/static/css/summary.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Information from First Page</h1>
+  <div id="displayData"></div>
+
+  <script>
+    const storedData = sessionStorage.getItem('formData');
+
+    if (storedData) {
+      const formData = JSON.parse(storedData);
+
+      const displayDiv = document.getElementById('displayData');
+      displayDiv.innerHTML = `
+        <p>Full Name: ${formData.firstName}${formData.lastName}</p>
+        <p>Number of Guests: ${formData.numberOfGuests}</p>
+        <p>Date: ${formData.eventDate}</p>
+        <p>Time: ${formData.eventTime}</p>
+        <p>Time: ${formData.eventTime}</p>
+        <p>Requires Parking? ${formData.parking}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
